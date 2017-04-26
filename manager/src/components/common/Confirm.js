@@ -13,7 +13,7 @@ const Confirm = ({ children, visible, onAccept, onDecline }) => {
             animationType="slide"
             onRequestClose={() => {}}
         >
-            <View style={containerStyle>
+            <View style={containerStyle}>
                 <CardSection style={cardSectionStyle}>
                     <Text style={textStyle}>
                         {children}
