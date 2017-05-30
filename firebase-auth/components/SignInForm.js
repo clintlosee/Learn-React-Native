@@ -5,20 +5,22 @@ import axios from 'axios';
 
 const ROOT_URL = 'https://us-central1-one-time-password-81201.cloudfunctions.net';
 
-class SignUpForm extends Component {
-    state = { phone: '' };
+class SignInForm extends Component {
+    state = { phone: '', code: '' };
 
     handleSubmit = async () => {
         try {
-            await axios.post(`${ROOT_URL}/createuser`, { phone: this.state.phone });
-            await axios.post(`${ROOT_URL}/requestOneTimePassword`, { phone: this.state.phone });
+            await axios.post(`${ROOT_URL}/verifyOneTimePassword`, {
+                phone: this.state.phone,
+                code: this.state.code
+            });
         } catch (err) {
             console.log(err);
         }
     }
 
-    render () {
-        return ( 
+    render() {
+        return (
             <View>
                 <View style={{ marginBottom: 10 }}>
                     <FormLabel>Enter Phone Number</FormLabel>
@@ -27,10 +29,17 @@ class SignUpForm extends Component {
                         onChangeText={phone => this.setState({ phone })}
                     />
                 </View>
-                <Button onPress={this.handleSubmit} title="Submit"></Button>
+                <View style={{ marginBottom: 10 }}>
+                    <FormLabel>Enter Code</FormLabel>
+                    <FormInput
+                        value={this.state.code}
+                        onChangeText={code => this.setState({ code })}
+                    />
+                </View>
+                <Button onPress={this.handleSubmit} title="Submit"/>
             </View>
         );
     }
 }
 
-export default SignUpForm;
+export default SignInForm;
