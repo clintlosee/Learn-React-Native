@@ -1,0 +1,30 @@
+{
+    "expo": {
+        "name": "RC Willey",
+        "slug": "rcwilley",
+        "sdkVersion": "17.0.0",
+        "privacy": "unlisted",
+        "description": "An empty new project",
+        "version": "1.2.2",
+        "orientation": "portrait",
+        "primaryColor": "#cccccc",
+        "icon": "./assets/icons/Icon-60@3x.png",
+        "loading": {
+            "icon": "./assets/icons/rcwLogo.png",
+            "backgroundColor": "#FFFFFF",
+            "hideExponentText": true
+        },
+        "packagerOpts": {
+            "assetExts": ["ttf", "mp4"]
+        },
+        "ios": {
+            "supportsTablet": true,
+            "bundleIdentifier": "com.rcwilley.RCWilley",
+            "buildNumber": "2"
+        },
+        "android": {
+            "package": "com.rcw.rcwappV2",
+            "versionCode": 7
+        }
+    }
+}
