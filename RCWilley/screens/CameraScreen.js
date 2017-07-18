@@ -4,9 +4,13 @@ import {
   Text,
   View,
   Alert,
-  StyleSheet
+  StyleSheet,
+  Dimensions
 } from 'react-native';
-import { Icon } from 'react-native-elements';
+import { Icon, Header } from 'react-native-elements';
+
+const SCREEN_WIDTH = Dimensions.get('window').width;
+const SCREEN_HEIGHT = Dimensions.get('window').height;
 
 class CameraScreen extends Component {
     state = {
@@ -48,9 +52,10 @@ class CameraScreen extends Component {
         } else {
             return (
                 <View style={{ flex: 1 }}>
+                    <Text style={styles.scanText}>Scan Barcode</Text>
                     <BarCodeScanner
                         onBarCodeRead={this._handleBarCodeRead}
-                        style={{ height: 650, width: 400 }}
+                        style={{ height: SCREEN_HEIGHT - 65, width: SCREEN_WIDTH, top: 65 }}
                         type="back"
                     />
                     <View style={styles.buttonContainer}>
@@ -65,21 +70,6 @@ class CameraScreen extends Component {
                 </View>
             );
         }
-
-        // return (
-        //     <View>
-        //         {
-        //           this.state.hasCameraPermission === null ?
-        //           <Text>Requesting for camera permission</Text> :
-        //           this.state.hasCameraPermission === false ?
-        //             <Text>Camera permission is not granted</Text> :
-        //             <BarCodeScanner
-        //               onBarCodeRead={this._handleBarCodeRead}
-        //               style={{ height: 650, width: 400 }}
-        //             />
-        //         }
-        //     </View>
-        // );
     }
 }
 
@@ -88,6 +78,16 @@ const styles = {
         position: 'absolute',
         bottom: 40,
         right: 10
+    },
+    scanText: {
+        position: 'absolute',
+        top: 15,
+        left: 0,
+        right: 0,
+        fontSize: 24,
+        textAlign: 'center',
+        backgroundColor: 'transparent',
+        color: '#FFFFFF'
     }
 }
 

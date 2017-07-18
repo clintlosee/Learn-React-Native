@@ -1,21 +1,17 @@
 import Expo from 'expo';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, StatusBar } from 'react-native';
 import { TabNavigator, StackNavigator } from 'react-navigation';
 
 import MainScreen from './screens/MainScreen';
 import CameraScreen from './screens/CameraScreen';
 import ProdSearchScreen from './screens/ProdSearchScreen';
 
-const WEBVIEW_REF = 'webview';
-const DEFAULT_URL = 'https://rcwtest.rcwilley.com';
-
-class App extends React.Component {
+export default class App extends React.Component {
   render() {
     const MainNavigator = TabNavigator({
       main: { screen: MainScreen },
       camera: { screen: CameraScreen },
-      // product: { screen: ProdSearchScreen }
     }, {
       navigationOptions: {
         tabBarVisible: false
@@ -25,6 +21,7 @@ class App extends React.Component {
 
     return (
       <View style={styles.container}>
+      <StatusBar barStyle="light-content" />
         <MainNavigator />
       </View>
     );
@@ -34,8 +31,8 @@ class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 20
+    // marginTop: 20
+    paddingTop: 20,
+    backgroundColor: '#2859A6'
   }
 });
-
-Expo.registerRootComponent(App);

@@ -2,13 +2,13 @@
     "expo": {
         "name": "RC Willey",
         "slug": "rcwilley",
-        "sdkVersion": "17.0.0",
+        "sdkVersion": "18.0.0",
         "privacy": "unlisted",
-        "description": "An empty new project",
+        "description": "RC Willey Home Furnishings mobile app",
         "version": "1.2.2",
         "orientation": "portrait",
-        "primaryColor": "#cccccc",
-        "icon": "./assets/icons/Icon-60@3x.png",
+        "primaryColor": "#14468A",
+        "icon": "./assets/icons/appIcon.png",
         "loading": {
             "icon": "./assets/icons/rcwLogo.png",
             "backgroundColor": "#FFFFFF",

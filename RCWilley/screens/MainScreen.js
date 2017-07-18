@@ -8,7 +8,7 @@ import {
   WebView,
   Alert
 } from 'react-native';
-import { Button, Icon } from 'react-native-elements';
+import { Button, Icon, Tabs, Tab } from 'react-native-elements';
 
 const WEBVIEW_REF = 'webview';
 const DEFAULT_URL = 'https://www.rcwilley.com';
@@ -25,14 +25,14 @@ class MainScreen extends Component {
 
     onNavigationStateChange = (navState) => {
         this.setState({
-        backButtonEnabled: navState.canGoBack,
-        forwardButtonEnabled: navState.canGoForward,
-        url: navState.url,
-        status: navState.title,
-        loading: navState.loading,
-        scalesPageToFit: true,
-        javaScriptEnabled: true,
-        canGoBack: navState.canGoBack
+            backButtonEnabled: navState.canGoBack,
+            forwardButtonEnabled: navState.canGoForward,
+            url: navState.url,
+            status: navState.title,
+            loading: navState.loading,
+            scalesPageToFit: true,
+            javaScriptEnabled: true,
+            canGoBack: navState.canGoBack
         });
     };
 
@@ -55,7 +55,6 @@ class MainScreen extends Component {
                     ref={WEBVIEW_REF}
                     style={{ flex: 1 }}
                     onNavigationStateChange={this.onNavigationStateChange.bind(this)}
-                    // source={{ uri: `${DEFAULT_URL}?q=${searchUrl}` }}
                     source={{ uri: params ? SEARCH_URL : DEFAULT_URL }}
                     decelerationRate="normal"
                     scalesPageToFit={this.state.scalesPageToFit}
@@ -82,20 +81,39 @@ class MainScreen extends Component {
                         // />
                         }
                 </View>
-
+                {
+                // <View>
+                //     <Tabs tabBarStyle={{ backgroundColor: '#14458A' }}>
+                //         <Tab
+                //             titleStyle={{ fontSize: 12, color: '#FFFFFF', marginTop: 5 }}
+                //             title={'Back'}
+                //             renderIcon={() => <Icon containerStyle={{justifyContent: 'center', alignItems: 'center', marginTop: 42, marginBottom: 5}} color={'#FFFFFF'} name='reply' size={33} />}
+                //             onPress={this.onBack.bind(this)}>
+                //         >
+                //         </Tab>
+                //         <Tab
+                //             titleStyle={{ fontSize: 12, color: '#FFFFFF', marginTop: 5 }}
+                //             title={'Scan'}
+                //             renderIcon={() => <Icon containerStyle={{justifyContent: 'center', alignItems: 'center', marginTop: 42, marginBottom: 5}} color={'#FFFFFF'} name='crop-free' size={33} />}
+                //             onPress={this.onCameraButtonPress}>
+                //         >
+                //         </Tab>
+                //     </Tabs>
+                // </View>
+                }
 
             {
-                this.state.canGoBack ?
-                <View style={styles.topbar}>
-                <TouchableOpacity
-                    disabled={!this.state.canGoBack}
-                    onPress={this.onBack.bind(this)}
-                >
-                    <Text style={this.state.canGoBack ? styles.topbarText : styles.topbarTextDisabled}>
-                    Previous Page
-                    </Text>
-                </TouchableOpacity>
-                </View> : null
+                // this.state.canGoBack ?
+                // <View style={styles.topbar}>
+                // <TouchableOpacity
+                //     disabled={!this.state.canGoBack}
+                //     onPress={this.onBack.bind(this)}
+                // >
+                //     <Text style={this.state.canGoBack ? styles.topbarText : styles.topbarTextDisabled}>
+                //     Previous Page
+                //     </Text>
+                // </TouchableOpacity>
+                // </View> : null
             }
             </View>
         );
@@ -105,7 +123,6 @@ class MainScreen extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        // marginTop: 20
     },
     topbar: {
         padding: 10,
