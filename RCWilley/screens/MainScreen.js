@@ -103,17 +103,17 @@ class MainScreen extends Component {
                 }
 
             {
-                // this.state.canGoBack ?
-                // <View style={styles.topbar}>
-                // <TouchableOpacity
-                //     disabled={!this.state.canGoBack}
-                //     onPress={this.onBack.bind(this)}
-                // >
-                //     <Text style={this.state.canGoBack ? styles.topbarText : styles.topbarTextDisabled}>
-                //     Previous Page
-                //     </Text>
-                // </TouchableOpacity>
-                // </View> : null
+                this.state.canGoBack ?
+                <View style={styles.topbar}>
+                <TouchableOpacity
+                    disabled={!this.state.canGoBack}
+                    onPress={this.onBack.bind(this)}
+                >
+                    <Text style={this.state.canGoBack ? styles.topbarText : styles.topbarTextDisabled}>
+                    Previous Page
+                    </Text>
+                </TouchableOpacity>
+                </View> : null
             }
             </View>
         );

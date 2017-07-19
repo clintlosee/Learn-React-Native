@@ -31,7 +31,7 @@ class CameraScreen extends Component {
     _handleBarCodeRead = data => {
         this.props.navigation.navigate('main', { scanData: data.data });
         // Alert.alert(
-        //     'Scan Successful',
+        //     'Scanned',
         //     'SKU: ' + JSON.stringify(data.data),
         //     [
         //         { text: 'Sounds Good', onPress: () => 

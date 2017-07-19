@@ -5,7 +5,6 @@ import { TabNavigator, StackNavigator } from 'react-navigation';
 
 import MainScreen from './screens/MainScreen';
 import CameraScreen from './screens/CameraScreen';
-import ProdSearchScreen from './screens/ProdSearchScreen';
 
 export default class App extends React.Component {
   render() {
