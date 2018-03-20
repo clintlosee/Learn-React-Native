@@ -34,8 +34,7 @@ class CameraScreen extends Component {
         //     'Scanned',
         //     'SKU: ' + JSON.stringify(data.data),
         //     [
-        //         { text: 'Sounds Good', onPress: () => 
-        //             // this.props.navigation.navigate('product', { scanData: data.data })
+        //         { text: 'OK', onPress: () => 
         //             this.props.navigation.navigate('main', { scanData: data.data })
         //         },
         //         { text: 'Cancel', onPress: () => {}, style: 'cancel' }

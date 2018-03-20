@@ -20,7 +20,7 @@
         "ios": {
             "supportsTablet": true,
             "bundleIdentifier": "com.rcwilley.RCWilley",
-            "buildNumber": "2"
+            "buildNumber": "3"
         },
         "android": {
             "package": "com.rcw.rcwappV2",
